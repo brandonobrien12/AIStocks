@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Stocks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #007bff;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            padding: 10px;
+            margin-bottom: 5px;
+            background-color: #fafafa;
+            border-radius: 3px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        strong {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        // Function to reload the page every 1 seconds
+        setInterval(function() {
+            location.reload();
+        }, 1000); // 10 seconds in milliseconds
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>AI STOCKS</h1>
+        <ul>
+            {% for symbol, result in results.items() %}
+            <li>
+                <strong>{{ symbol }}</strong><br>
+                Summary: {{ result.summary }}<br>
+                RSI: {{ result.RSI }}<br>
+                Momentum: {{ result.Momentum}}<br>
+                Open: {{ result.open}}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
